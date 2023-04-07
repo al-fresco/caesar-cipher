@@ -6,7 +6,4 @@ def encrypt(string, shift_factor)
     # convert each character to the letter of the alphabet that is 'shift_factor' spaces ahead of it
     # return encrypted string
     encrypted_string = ''
-    string_as_array = string.chars
-
-
-
+    codepoints_of_string = string.codepoints
