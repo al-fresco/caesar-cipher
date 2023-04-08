@@ -6,13 +6,17 @@ alphabet = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'.chars
 
 def caesar_cipher(text, shift)
     utf = text.codepoints
-    utf.map do |codepoint|
-        if codepoint.between?(97-122) # checks for lowercase letters
-            # code
-        elsif codepoint.between?(65-90) # checks for uppercase letters
-            # code
+    encrypted_int_array = utf.map do |codepoint|
+        if codepoint.between?(97, 122) # checks for lowercase letters
+            codepoint + shift
+        elsif codepoint.between?(65, 90) # checks for uppercase letters
+            codepoint + shift
         end
     end
+    encrypted_chr_array = encrypted_int_array.map do |codepoint|
+        codepoint.chr
+    end
+    encrypted_chr_array.join('')
 end
 
 puts "Enter text to be encrypted:"
@@ -23,4 +27,4 @@ puts "Enter shift factor of encryption:"
 
 shift = gets.chomp.to_i
 
-caesar_cipher(text, shift)
+p caesar_cipher(text, shift)
