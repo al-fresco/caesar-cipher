@@ -5,11 +5,12 @@ alphabet = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'.chars
 #uppercase letters codepoint range: 65-90
 
 def caesar_cipher(text, shift)
-    text.codepoints.map do |codepoint|
-        if alphabet.includes?(codepoint)
-            (codepoint + shift).chr
-        else
-            codepoint
+    utf = text.codepoints
+    utf.map do |codepoint|
+        if codepoint.between?(97-122) # checks for lowercase letters
+            # code
+        elsif codepoint.between?(65-90) # checks for uppercase letters
+            # code
         end
     end
 end
