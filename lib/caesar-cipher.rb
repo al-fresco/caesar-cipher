@@ -1,10 +1,7 @@
-require 'pry-byebug'
-
-alphabet = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz'.chars
 #lowercase letters codepoint range: 97-122
 #uppercase letters codepoint range: 65-90
 
-def caesar_cipher(text, shift)
+def caesar_cipher(text, shift = 1)
     utf = text.codepoints
     encrypted_int_array = utf.map do |codepoint|
         if codepoint.between?(97, 122) # checks for lowercase letters
