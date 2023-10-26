@@ -23,13 +23,3 @@ def caesar_cipher(text, shift = 1)
     end
     encrypted_chr_array.join('')
 end
-
-puts "Enter text to be encrypted:"
-
-text = gets.chomp
-
-puts "Enter shift factor of encryption:"
-
-shift = gets.chomp.to_i
-
-p caesar_cipher(text, shift)
